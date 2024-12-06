@@ -1,0 +1,30 @@
+#it contains configurable default values for the helm chart
+
+#replica count for each deployment
+replicaCount: 1
+
+#backend deployment configuration
+backend:
+  image: shreybatra/sample-backend
+  env:
+    REDIS_URI: redis://redis-svc:6379
+  service:
+    type: ClusterIP
+    port: 8000
+
+#Frontend deployment configuration
+frontend:
+  image: shreybatra/sample-frontend
+  env:
+    BACKEND_URL: http://backend-svc:8000
+  service:
+    type: NodePort
+    port: 5175
+    nodePort: 31000
+
+#redis deployment configuration
+redis:
+  image: redis
+  service:
+    type: ClusterIP
+    port: 6379
