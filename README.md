@@ -89,6 +89,8 @@ kubectl get all
 kubectl get pods
 This will show the status of your Pods, Services, Deployments, etc.
 
+![output](https://github.com/user-attachments/assets/e9124566-3f9e-4bc7-a3b8-9da8cbb6ba6d)
+
 
 
 
